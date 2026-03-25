@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DecorJRZ — We Are Decor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Estilos.css" />
+</head>
+<body>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo" onclick="showPage('home')">
+      <img src="DecorJRZ_Logo.jpg" alt="DecorJRZ Logo" class="nav-logo-img" />
+    </div>
+
+    <!-- Hamburger (solo celular) -->
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a id="nav-home"    class="active"  onclick="showPage('home')">Inicio</a></li>
+      <li><a id="nav-catalog"                 onclick="showPage('catalog')">Catálogo</a></li>
+      <li><a id="nav-about"                   onclick="showPage('about')">Nosotros</a></li>
+      <li><a id="nav-contact" class="nav-cta" onclick="showPage('contact')">Contacto</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- ══════════════ PAGE: HOME ══════════════ -->
+  <div class="page active" id="page-home">
+
+    <section id="hero-section">
+      <div class="hero-left">
+        <div class="hero-logo-wrap">
+          <img src="DecorJRZ_Logo.jpg" alt="DecorJRZ" class="hero-logo" />
+        </div>
+        <p class="hero-tag">✦ Ciudad Juárez, Chihuahua</p>
+        <h1 class="hero-title">Tu hogar,<br/>tu mayor<br/><em>obra de arte.</em></h1>
+        <p class="hero-desc">Materiales de decoración cuidadosamente seleccionados para transformar cada rincón de tu espacio en algo extraordinario.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('catalog')">Ver Catálogo</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="Decor_Entrada.jpg" alt="Decoración de interiores" />
+        <div class="hero-badge">
+          <div class="number"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-strip">
+      <div class="marquee-inner" id="marquee-inner"></div>
+    </div>
+
+    <!-- Destacados -->
+    <div class="section-head">
+      <p class="section-eyebrow">✦ Lo más buscado</p>
+      <h2 class="section-title">Productos <em>destacados</em></h2>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+
+<div class="branches-section">
+  <h3 class="branches-title">Nuestras <em>sucursales</em></h3>
+
+  <div class="branches-container">
+
+    <a class="branch-card"
+       href="https://maps.google.com/?q=TU+DIRECCION+SUCURSAL+1,+Ciudad+Juarez,+Chihuahua"
+       target="_blank">
+      <span class="branch-icon">📍</span>
+      <span>Sucursal 1</span>
+    </a>
+
+    <a class="branch-card"
+       href="https://maps.google.com/?q=TU+DIRECCION+SUCURSAL+2,+Ciudad+Juarez,+Chihuahua"
+       target="_blank">
+      <span class="branch-icon">📍</span>
+      <span>Sucursal 2</span>
+    </a>
+
+  </div>
+</div>
+
+    <!-- Beneficios -->
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon"></div>
+        <h3 class="feature-title">Entrega en Juárez</h3>
+        <p class="feature-desc">Llevamos tus materiales directamente a tu domicilio o proyecto en toda la ciudad.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"></div>
+        <h3 class="feature-title">Calidad Premium</h3>
+        <p class="feature-desc">Seleccionamos materiales que combinan durabilidad, estética y precio accesible.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"></div>
+        <h3 class="feature-title">Asesoría Personalizada</h3>
+        <p class="feature-desc">Te orientamos para encontrar el material perfecto para tu estilo y presupuesto.</p>
+      </div>
+    </div>
+
+  </div><!-- /page-home -->
+
+  <!-- ══════════════ PAGE: CATALOG ══════════════ -->
+  <div class="page" id="page-catalog">
+    <div class="page-hero">
+      <p class="page-hero-tag">✦ Nuestra colección</p>
+      <h1 class="page-hero-title">Catálogo<br/><em>completo</em></h1>
+    </div>
+    <div class="filter-bar" id="filter-bar"></div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </div>
+
+  <!-- ══════════════ PAGE: ABOUT ══════════════ -->
+  <div class="page" id="page-about">
+    <div class="page-hero">
+      <p class="page-hero-tag">✦ Quiénes somos</p>
+      <h1 class="page-hero-title">Pasión por<br/>los <em>espacios</em></h1>
+    </div>
+    <div class="about-content">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Nacidos en <em>Juárez</em>,<br/>hechos para tu hogar</h2>
+          <p>DecorJRZ nació con una visión clara: llevar materiales de decoración de alta calidad a los hogares y proyectos de Ciudad Juárez a precios accesibles. Creemos que un espacio bien decorado transforma no solo la apariencia de un hogar, sino la calidad de vida de quienes lo habitan.</p>
+          <p>Contamos con una amplia variedad de materiales: lambrín de PVC, placas efecto mármol, persianas para todo tipo de ventanas, Espejos de placa, paneles decorativos y mucho más.</p>
+          <p>Nuestro equipo está listo para asesorarte en tu próximo proyecto, ya sea una remodelación completa o darle un toque fresco a una habitación.</p>
+          <button class="btn-primary" style="margin-top:20px" onclick="showPage('contact')">Habla con nosotros</button>
+        </div>
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Tienda DecorJRZ" />
+          <div class="about-img-badge">
+            <span class="num"></span>
+            <span class="lbl">Años de experiencia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-logo-center">
+        <img src="DecorJRZ_Logo.jpg" alt="DecorJRZ" />
+        <p>We Are Decor</p>
+      </div>
+
+      <h2 class="values-heading">Nuestros <em>valores</em></h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3 class="value-title">Calidad garantizada</h3>
+          <p class="value-desc">Trabajamos con proveedores de confianza para ofrecerte materiales que duran y lucen increíbles.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3 class="value-title">Atención cercana</h3>
+          <p class="value-desc">Somos una empresa local y tratamos a cada cliente como parte de nuestra comunidad.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3 class="value-title">Innovación constante</h3>
+          <p class="value-desc">Siempre buscamos los nuevos materiales y tendencias para mantenerte a la vanguardia del diseño.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ PAGE: CONTACT ══════════════ -->
+  <div class="page" id="page-contact">
+    <div class="page-hero">
+      <p class="page-hero-tag">✦ Estamos aquí</p>
+      <h1 class="page-hero-title">Hablemos de<br/>tu <em>proyecto</em></h1>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-brand-logo">
+          <img src="DecorJRZ_Logo.jpg" alt="DecorJRZ" />
+        </div>
+        <h2>Visítanos o <em>escríbenos</em></h2>
+        <p>Estamos listos para ayudarte a encontrar los materiales perfectos para tu hogar o proyecto en Ciudad Juárez.</p>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail-text">
+            <h4>Ubicación</h4>
+            <p>Ciudad Juárez, Chihuahua, México</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail-text">
+            <h4>Teléfono</h4>
+            <p>(656) 123-4567</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail-text">
+            <h4>Correo</h4>
+            <p>DecorJrz@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-detail-text">
+            <h4>Horario</h4>
+            <p>Lun–Sáb: 9:00 am – 7:00 pm<br/>Dom: 10:00 am – 3:00 pm</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Envíanos un mensaje</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="f-name" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="f-phone" placeholder="(656) 000-0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" id="f-email" placeholder="correo@ejemplo.com" />
+        </div>
+        <div class="form-group">
+          <label>¿Qué necesitas?</label>
+          <select id="f-topic">
+            <option>Consulta sobre un producto</option>
+            <option>Cotización de proyecto</option>
+            <option>Información de precios</option>
+            <option>Entrega a domicilio</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea id="f-msg" placeholder="Cuéntanos sobre tu proyecto o duda…"></textarea>
+        </div>
+        <button class="btn-primary btn-full" onclick="sendForm()">Enviar mensaje →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <img src="DecorJRZ_Logo.jpg" alt="DecorJRZ" class="footer-logo-img" />
+        <p class="footer-desc">Materiales de decoración para el hogar con calidad y estilo.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a onclick="showPage('catalog')">Lambrín</a></li>
+          <li><a onclick="showPage('catalog')">Efecto Mármol</a></li>
+          <li><a onclick="showPage('catalog')">Persianas</a></li>
+          <li><a onclick="showPage('catalog')">Plafones</a></li>
+		  <li><a onclick="showPage('catalog')">Cortinas Waves</a></li>
+          <li><a onclick="showPage('catalog')">Ver todo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a onclick="showPage('about')">Nosotros</a></li>
+          <li><a onclick="showPage('contact')">Contacto</a></li>
+          <li><a href="https://wa.me/526561234567?text=Hola%20DecorJRZ%2C%20me%20interesa%20un%20producto" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100075977175646&sk=about&locale=es_LA" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/decorjrz" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DecorJRZ — Ciudad Juárez, Chihuahua</p>
+      <p class="footer-accent">We Are Decor ✦</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="whatsapp-fab"
+     href="https://wa.me/526561234567?text=Hola%20DecorJRZ%2C%20me%20interesa%20un%20producto"
+     target="_blank"
+     title="Chatea con nosotros">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-fab-label">Hablemos</span>
+  </a>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="Script.js"></script>
+</body>
+</html>
